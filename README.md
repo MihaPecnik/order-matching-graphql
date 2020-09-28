@@ -2,8 +2,8 @@
 
 ## How to run application
 
-  Run postgres cointainer from docker-compose.yml file.
-  go build server.go
+  Run postgres cointainer from docker-compose.yml file, then :
+  * go build server.go
   
 
 ## Api endpoints
