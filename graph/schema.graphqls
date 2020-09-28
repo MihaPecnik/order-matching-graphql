@@ -1,0 +1,42 @@
+# GraphQL schema example
+#
+# https://gqlgen.com/getting-started/
+
+type Table {
+  id: Int!
+  UserId: Int!
+  Buy: Boolean!
+  Value: Float!
+  Quantity: Int!
+  Ticker: String!
+}
+
+type UpdateOrderBookResponse {
+  Value: Float!
+  Quantity: Int!
+}
+
+type GetTickerInfoResponse {
+  buy:UpdateOrderBookResponse!
+  sell:UpdateOrderBookResponse!
+}
+
+input Request {
+  UserId: Int!
+  Buy: Boolean!
+  Value: Float!
+  Quantity: Int!
+  Ticker: String!
+}
+
+input Ticker {
+  ticker: String!
+}
+
+type Mutation {
+  updateOrderBook(input: Request!): [UpdateOrderBookResponse!]!
+}
+
+type Query{
+  getInfoTicker(input: Ticker!):  GetTickerInfoResponse!
+}
